@@ -1,0 +1,414 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9157310003783556613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fa41f99bd82f864da1017e1dc0c7193, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Id>k__BackingField: 3736df13-5b00-413c-9a76-69abebc87fc5
+  <ConnectedTo>k__BackingField:
+  - 00894591-232a-4236-854b-3719b3726c76
+  - 6b655d45-294f-4c08-815b-81d571dbbb4d
+  - 4e3081e7-432f-4294-896b-4534a3a8f96a
+  <Position>k__BackingField: {x: 636.50006, y: 147.00002}
+  <Name>k__BackingField: Fallback
+  <Root>k__BackingField: 0
+  <NodeType>k__BackingField: 2
+--- !u!114 &-8102437689277819129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fa41f99bd82f864da1017e1dc0c7193, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Id>k__BackingField: f5601056-49fc-4171-b3ae-699ccb4b3b47
+  <ConnectedTo>k__BackingField: []
+  <Position>k__BackingField: {x: 974.00006, y: 484.50003}
+  <Name>k__BackingField: MoveBack
+  <Root>k__BackingField: 0
+  <NodeType>k__BackingField: 3
+--- !u!114 &-7595494772483999652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fa41f99bd82f864da1017e1dc0c7193, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Id>k__BackingField: 413c73f5-2820-4ce2-be10-b53caa38a638
+  <ConnectedTo>k__BackingField: []
+  <Position>k__BackingField: {x: 798.50006, y: 763.00006}
+  <Name>k__BackingField: ActivateSpin
+  <Root>k__BackingField: 0
+  <NodeType>k__BackingField: 3
+--- !u!114 &-5262776461385116419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fa41f99bd82f864da1017e1dc0c7193, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Id>k__BackingField: 6d4e52ea-47a0-45f4-824c-4f2dd3a9da13
+  <ConnectedTo>k__BackingField: []
+  <Position>k__BackingField: {x: 974.00006, y: 205.50002}
+  <Name>k__BackingField: StopSpin
+  <Root>k__BackingField: 0
+  <NodeType>k__BackingField: 3
+--- !u!114 &-4555654124537610775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fa41f99bd82f864da1017e1dc0c7193, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Id>k__BackingField: ee66890a-c329-4a4f-9136-3ce684afe54e
+  <ConnectedTo>k__BackingField: []
+  <Position>k__BackingField: {x: 798.50006, y: 901.50006}
+  <Name>k__BackingField: ShootNonStop
+  <Root>k__BackingField: 0
+  <NodeType>k__BackingField: 3
+--- !u!114 &-2914524858834555562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fa41f99bd82f864da1017e1dc0c7193, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Id>k__BackingField: 5fc79543-2a7f-4c8d-934a-88522eaa7ddc
+  <ConnectedTo>k__BackingField: []
+  <Position>k__BackingField: {x: 974.00006, y: -575.50006}
+  <Name>k__BackingField: tooFar
+  <Root>k__BackingField: 0
+  <NodeType>k__BackingField: 3
+--- !u!114 &-2892665408858225648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fa41f99bd82f864da1017e1dc0c7193, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Id>k__BackingField: 6b655d45-294f-4c08-815b-81d571dbbb4d
+  <ConnectedTo>k__BackingField:
+  - 67e57c32-46ce-4359-bcff-d2b81e14e352
+  - 6d4e52ea-47a0-45f4-824c-4f2dd3a9da13
+  - a5e894a3-ee22-4dfc-ae10-30b3670bbafc
+  - f5601056-49fc-4171-b3ae-699ccb4b3b47
+  <Position>k__BackingField: {x: 798.50006, y: 145.00002}
+  <Name>k__BackingField: Sequence
+  <Root>k__BackingField: 0
+  <NodeType>k__BackingField: 1
+--- !u!114 &-2418032245474438082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fa41f99bd82f864da1017e1dc0c7193, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Id>k__BackingField: 6de6d9b7-7e68-4a58-90ff-c3e10f4013f0
+  <ConnectedTo>k__BackingField: []
+  <Position>k__BackingField: {x: 974.00006, y: -282.50003}
+  <Name>k__BackingField: Aim
+  <Root>k__BackingField: 0
+  <NodeType>k__BackingField: 3
+--- !u!114 &-1567193898131498546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fa41f99bd82f864da1017e1dc0c7193, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Id>k__BackingField: 67e57c32-46ce-4359-bcff-d2b81e14e352
+  <ConnectedTo>k__BackingField: []
+  <Position>k__BackingField: {x: 974.00006, y: 57.500008}
+  <Name>k__BackingField: tooClose
+  <Root>k__BackingField: 0
+  <NodeType>k__BackingField: 3
+--- !u!114 &-1099685266525036082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fa41f99bd82f864da1017e1dc0c7193, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Id>k__BackingField: 78a5af1e-9472-4824-800a-7834a7eeec92
+  <ConnectedTo>k__BackingField: []
+  <Position>k__BackingField: {x: 974.00006, y: -131.00002}
+  <Name>k__BackingField: Move
+  <Root>k__BackingField: 0
+  <NodeType>k__BackingField: 3
+--- !u!114 &-930606046131843561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fa41f99bd82f864da1017e1dc0c7193, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Id>k__BackingField: 4e3081e7-432f-4294-896b-4534a3a8f96a
+  <ConnectedTo>k__BackingField: []
+  <Position>k__BackingField: {x: 798.50006, y: 357.50003}
+  <Name>k__BackingField: isStopped
+  <Root>k__BackingField: 0
+  <NodeType>k__BackingField: 3
+--- !u!114 &-395982351645826172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fa41f99bd82f864da1017e1dc0c7193, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Id>k__BackingField: f83d72e2-25c6-4355-9db3-7261c3f0222d
+  <ConnectedTo>k__BackingField:
+  - 28966ce8-ae59-41fb-966f-da80b159ac9e
+  - 553b3847-bfb3-4687-9adf-dc2c32c5269a
+  <Position>k__BackingField: {x: 248.00002, y: 534.50006}
+  <Name>k__BackingField: Sequence
+  <Root>k__BackingField: 0
+  <NodeType>k__BackingField: 1
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7af4e56c0fd0d046ac00590705b86c8, type: 3}
+  m_Name: BTDoom
+  m_EditorClassIdentifier: 
+  Nodes:
+  - {fileID: 1707044409461694133}
+  - {fileID: -9157310003783556613}
+  - {fileID: 7067841151509988167}
+  - {fileID: -2914524858834555562}
+  - {fileID: -2418032245474438082}
+  - {fileID: -1099685266525036082}
+  - {fileID: 1746175290631851945}
+  - {fileID: -2892665408858225648}
+  - {fileID: -1567193898131498546}
+  - {fileID: -5262776461385116419}
+  - {fileID: 5695942995904369020}
+  - {fileID: -8102437689277819129}
+  - {fileID: -930606046131843561}
+  - {fileID: 2395526297549775169}
+  - {fileID: -395982351645826172}
+  - {fileID: 1806153634649903733}
+  - {fileID: 4835393361270937579}
+  - {fileID: 9475304920990381}
+  - {fileID: -7595494772483999652}
+  - {fileID: -4555654124537610775}
+--- !u!114 &9475304920990381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fa41f99bd82f864da1017e1dc0c7193, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Id>k__BackingField: 3a6e1760-1552-4c9f-8e43-1646be0dcc73
+  <ConnectedTo>k__BackingField: []
+  <Position>k__BackingField: {x: 798.50006, y: 629.00006}
+  <Name>k__BackingField: isStopped
+  <Root>k__BackingField: 0
+  <NodeType>k__BackingField: 3
+--- !u!114 &1707044409461694133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fa41f99bd82f864da1017e1dc0c7193, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Id>k__BackingField: 28966ce8-ae59-41fb-966f-da80b159ac9e
+  <ConnectedTo>k__BackingField:
+  - 3736df13-5b00-413c-9a76-69abebc87fc5
+  <Position>k__BackingField: {x: 395.00003, y: 256.00003}
+  <Name>k__BackingField: Movement
+  <Root>k__BackingField: 0
+  <NodeType>k__BackingField: 0
+--- !u!114 &1746175290631851945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fa41f99bd82f864da1017e1dc0c7193, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Id>k__BackingField: efd39b2a-2635-4f8e-a075-8a7bdb9bc5de
+  <ConnectedTo>k__BackingField: []
+  <Position>k__BackingField: {x: 974.00006, y: -422.50003}
+  <Name>k__BackingField: StopSpin
+  <Root>k__BackingField: 0
+  <NodeType>k__BackingField: 3
+--- !u!114 &1806153634649903733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fa41f99bd82f864da1017e1dc0c7193, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Id>k__BackingField: 553b3847-bfb3-4687-9adf-dc2c32c5269a
+  <ConnectedTo>k__BackingField:
+  - 686e561e-8f99-434f-a99e-fd61c4c3f0a1
+  <Position>k__BackingField: {x: 395.00003, y: 745.50006}
+  <Name>k__BackingField: Shooting
+  <Root>k__BackingField: 0
+  <NodeType>k__BackingField: 0
+--- !u!114 &2395526297549775169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fa41f99bd82f864da1017e1dc0c7193, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Id>k__BackingField: 98d1dc6c-0bb6-4244-b22d-033d23ef19fd
+  <ConnectedTo>k__BackingField:
+  - f83d72e2-25c6-4355-9db3-7261c3f0222d
+  <Position>k__BackingField: {x: 21.000002, y: 497.00006}
+  <Name>k__BackingField: Root
+  <Root>k__BackingField: 1
+  <NodeType>k__BackingField: 0
+--- !u!114 &4835393361270937579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fa41f99bd82f864da1017e1dc0c7193, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Id>k__BackingField: 686e561e-8f99-434f-a99e-fd61c4c3f0a1
+  <ConnectedTo>k__BackingField:
+  - 3a6e1760-1552-4c9f-8e43-1646be0dcc73
+  - 413c73f5-2820-4ce2-be10-b53caa38a638
+  - ee66890a-c329-4a4f-9136-3ce684afe54e
+  <Position>k__BackingField: {x: 636.50006, y: 783.00006}
+  <Name>k__BackingField: Sequence
+  <Root>k__BackingField: 0
+  <NodeType>k__BackingField: 1
+--- !u!114 &5695942995904369020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fa41f99bd82f864da1017e1dc0c7193, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Id>k__BackingField: a5e894a3-ee22-4dfc-ae10-30b3670bbafc
+  <ConnectedTo>k__BackingField: []
+  <Position>k__BackingField: {x: 974.00006, y: 343.50003}
+  <Name>k__BackingField: Aim
+  <Root>k__BackingField: 0
+  <NodeType>k__BackingField: 3
+--- !u!114 &7067841151509988167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fa41f99bd82f864da1017e1dc0c7193, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Id>k__BackingField: 00894591-232a-4236-854b-3719b3726c76
+  <ConnectedTo>k__BackingField:
+  - 5fc79543-2a7f-4c8d-934a-88522eaa7ddc
+  - efd39b2a-2635-4f8e-a075-8a7bdb9bc5de
+  - 6de6d9b7-7e68-4a58-90ff-c3e10f4013f0
+  - 78a5af1e-9472-4824-800a-7834a7eeec92
+  <Position>k__BackingField: {x: 798.50006, y: -175.00002}
+  <Name>k__BackingField: Sequence
+  <Root>k__BackingField: 0
+  <NodeType>k__BackingField: 1

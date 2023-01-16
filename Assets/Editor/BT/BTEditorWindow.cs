@@ -8,31 +8,27 @@ namespace GAIA.AI.Windows
 {
     public class BTEditorWindow : EditorWindow
     {
-        [MenuItem("Window/GAIA/AI/Behavior Tree")]
-        public static void Open()
-        {
-            BTEditorWindow wnd = GetWindow<BTEditorWindow>("Behavior Tree");
-        }
+        private BTGraphView GraphView;
 
-        private void OnEnable()
+        public void Initialize(string path)
         {
             AddGraphView();
             AddStyles();
+            GraphView.LoadSO(path);
+            titleContent.text = GraphView.graphSO.GetName();
         }
 
         private void AddGraphView()
         {
-            BTGraphView graphView = new BTGraphView();
-
-            graphView.StretchToParentSize();
-
-            rootVisualElement.Add(graphView);
+            GraphView = new BTGraphView();
+            GraphView.StretchToParentSize();
+            GraphView.Window = this;
+            rootVisualElement.Add(GraphView);
         }
-        
+
         private void AddStyles()
         {
             StyleSheet styleSheet = (StyleSheet) EditorGUIUtility.Load("BehaviorTrees/BTVariables.uss");
-
             rootVisualElement.styleSheets.Add(styleSheet);
         }
     }

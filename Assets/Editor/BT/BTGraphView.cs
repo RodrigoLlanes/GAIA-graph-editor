@@ -15,9 +15,13 @@ using UnityEditor;
 namespace GAIA.AI.Windows
 {
     using Elements;
+    using Data.Save;
     
     public class BTGraphView : GraphView
     {
+        public EditorWindow Window;
+        public BTGraphSO graphSO;
+        
         public BTGraphView()
         {
             AddManipulators();
@@ -26,15 +30,19 @@ namespace GAIA.AI.Windows
             AddStyles();
         }
 
-        public void GenerateXML(string name)
+        public void ExportToXML()
         {
-            StreamWriter stream = new StreamWriter(Path.Combine(Application.dataPath, name + ".xml"));
+            string path = AssetDatabase.GetAssetPath(graphSO);
+            path = path.Substring(0, path.Length - Path.GetFileName(path).Length);
+            path = EditorUtility.SaveFilePanel("Export Behavior Tree as XML", path, graphSO.GetName(), "xml");
+            
+            StreamWriter stream = new StreamWriter(path + ".xml");
             XmlWriterSettings sts = new XmlWriterSettings() { Indent = true };
             XmlWriter writer = XmlWriter.Create(stream, sts);
             
             writer.WriteStartDocument();
             writer.WriteStartElement("BT");
-            writer.WriteElementString("BTid", name);
+            writer.WriteElementString("BTid", graphSO.GetName());
             writer.WriteStartElement("Bt");
             writer.WriteStartElement("Trees");
             
@@ -115,6 +123,67 @@ namespace GAIA.AI.Windows
                     break;
             }
         }
+
+        private void SaveAs(string path)
+        {
+            graphSO = ScriptableObject.CreateInstance<BTGraphSO>();
+            AssetDatabase.CreateAsset(graphSO, path);
+            AssetDatabase.SaveAssets();
+
+            foreach (BTNode node in nodes)
+            {
+                BTNodeSO nodeSo = ScriptableObject.CreateInstance<BTNodeSO>();
+                nodeSo.Initialize(node.Id, node.GetPosition().position, node.NodeName, node.IsRoot, node.NodeType);
+                foreach (BTNode child in node.GetChildren())
+                {
+                    nodeSo.ConnectedTo.Add(child.Id);
+                }
+
+                graphSO.Nodes.Add(nodeSo);
+                AssetDatabase.AddObjectToAsset(nodeSo, graphSO);
+                AssetDatabase.SaveAssets();
+            }
+        }
+
+        private void SaveAs()
+        {
+            string path = EditorUtility.SaveFilePanelInProject("Save Behavior Tree", "BehaviorTree", "asset", "Please enter a file name to save the behavior tree to");
+            if (path.Length == 0)
+            {
+                return;
+            }
+            SaveAs(path);
+            Window.titleContent.text = graphSO.GetName();
+        }
+
+        [MenuItem("HotKey/Run _F5")]
+        private void Save()
+        {
+            string path = AssetDatabase.GetAssetPath(graphSO);
+            SaveAs(path);
+        }
+        
+        public void LoadSO(string path)
+        {
+            graphSO = AssetDatabase.LoadAssetAtPath<BTGraphSO>(path);
+            Dictionary<string, BTNode> instantiatedNodes = new Dictionary<string, BTNode>();
+
+            foreach (BTNodeSO nodeSo in graphSO.Nodes)
+            {
+                BTNode node = CreateNode(nodeSo.NodeType, nodeSo.Position, nodeSo.Name, nodeSo.Root);
+                AddElement(node);
+                instantiatedNodes[nodeSo.Id] = node;
+            }
+            
+            foreach (BTNodeSO nodeSo in graphSO.Nodes)
+            {
+                foreach (string id in nodeSo.ConnectedTo)
+                {
+                    Edge edge = instantiatedNodes[nodeSo.Id].outputPort.ConnectTo(instantiatedNodes[id].inputPort);
+                    AddElement(edge);
+                }
+            }
+        }
         
         public override List<Port> GetCompatiblePorts(Port startPort, NodeAdapter nodeAdapter)
         {
@@ -130,11 +199,11 @@ namespace GAIA.AI.Windows
             return compatiblePorts;
         }
 
-        private BTNode CreateNode(BTNodeType nodeType, Vector2 position)
+        private BTNode CreateNode(BTNodeType nodeType, Vector2 position, string nodeName = null, bool isRoot = false)
         {
             BTNode node = new BTNode();
 
-            node.Initialize(nodeType, position);
+            node.Initialize(nodeType, position, nodeName, isRoot);
             node.Draw();
 
             return node;
@@ -160,7 +229,9 @@ namespace GAIA.AI.Windows
                     menuEvent.menu.AppendAction("Add Sequence", actionEvent => AddElement(CreateNode(BTNodeType.Sequence, actionEvent.eventInfo.localMousePosition)));
                     menuEvent.menu.AppendAction("Add Fallback", actionEvent => AddElement(CreateNode(BTNodeType.Fallback, actionEvent.eventInfo.localMousePosition)));
                     menuEvent.menu.AppendAction("Add Action", actionEvent => AddElement(CreateNode(BTNodeType.Action, actionEvent.eventInfo.localMousePosition)));
-                    menuEvent.menu.AppendAction("Generate", actionEvent => GenerateXML("Test"));
+                    menuEvent.menu.AppendAction("Export to XML", actionEvent => ExportToXML());
+                    menuEvent.menu.AppendAction("Save", actionEvent => Save());
+                    menuEvent.menu.AppendAction("Save As", actionEvent => SaveAs());
                 });
 
             return contextualMenuManipulator;

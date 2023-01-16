@@ -23,24 +23,20 @@ namespace GAIA.AI.Elements
         public Port inputPort;
         public Port outputPort;
         
-        public void Initialize(BTNodeType nodeType, Vector2 position)
+        public void Initialize(BTNodeType nodeType, Vector2 position, string nodeName = null, bool isRoot = false)
         {
             Id = Guid.NewGuid().ToString();
             NodeType = nodeType;
-            switch (NodeType)
+            NodeName = NodeType.ToString();
+                
+            if (NodeType is BTNodeType.Action or BTNodeType.Tree)
             {
-                case BTNodeType.Tree:
-                    NodeName = "Tree";
-                    break;
-                case BTNodeType.Sequence:
-                    NodeName = "Sequence";
-                    break;
-                case BTNodeType.Fallback:
-                    NodeName = "Fallback";
-                    break;
-                case BTNodeType.Action:
-                    NodeName = "Action";
-                    break;
+                NodeName = nodeName ?? NodeName;
+            }
+            
+            if (NodeType is BTNodeType.Tree)
+            {
+                IsRoot = isRoot;
             }
 
             SetPosition(new Rect(position, Vector2.zero));
@@ -48,11 +44,11 @@ namespace GAIA.AI.Elements
         
         public void Draw()
         {
-            title = NodeName;
+            title = NodeType.ToString();
 
             if (NodeType == BTNodeType.Action || NodeType == BTNodeType.Tree)
             {
-                TextField title = new TextField() { value = NodeName + " name" };
+                TextField title = new TextField() { value = NodeName };
                 title.RegisterCallback((ChangeEvent<string> evt) =>
                 {
                     NodeName = evt.newValue;
@@ -86,7 +82,11 @@ namespace GAIA.AI.Elements
 
         public IEnumerable<BTNode> GetChildren()
         {
-            return outputPort.connections.Select(edge => (BTNode) edge.input.node);
+            if (NodeType != BTNodeType.Action)
+            {
+                return outputPort.connections.Select(edge => (BTNode) edge.input.node);
+            }
+            return new List<BTNode>();
         }
         
         public IEnumerable<BTNode> GetOrderedChildren() // TODO: Modificar si se va a hacer vertical
