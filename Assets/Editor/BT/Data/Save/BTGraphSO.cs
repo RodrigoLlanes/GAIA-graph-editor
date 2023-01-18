@@ -6,11 +6,11 @@ using UnityEditor.Callbacks;
 using UnityEngine;
 
 
-namespace GAIA.AI.Data.Save
+namespace GAIA.BT.Data.Save
 {
     using Windows;
     
-    [CreateAssetMenuAttribute(fileName = "BehaviorTree", menuName = "GAIA/AI/Behavior Tree")]
+    [CreateAssetMenuAttribute(fileName = "BehaviorTree", menuName = "GAIA/Behavior Tree")]
     public class BTGraphSO : ScriptableObject
     {
         [field: SerializeField] public List<BTNodeSO> Nodes  = new List<BTNodeSO>();
@@ -19,10 +19,13 @@ namespace GAIA.AI.Data.Save
         public static bool OpenBTGraphWindow(int instanceID, int line)
         {
             string path = AssetDatabase.GetAssetPath(instanceID);
+            BTGraphSO graph = AssetDatabase.LoadAssetAtPath<BTGraphSO>(path);
+
+            if (graph is null) { return false; }
             
             BTEditorWindow window = EditorWindow.CreateWindow<BTEditorWindow>(path);
             window.Focus();
-            window.Initialize(path);
+            window.Initialize(graph);
             
             return true;
         }

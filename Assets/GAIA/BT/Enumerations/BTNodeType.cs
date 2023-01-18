@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-namespace GAIA.AI.Enumerations
+namespace GAIA.BT.Enumerations
 {
 
     public enum BTNodeType

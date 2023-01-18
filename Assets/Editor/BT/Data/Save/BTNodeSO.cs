@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-namespace GAIA.AI.Data.Save
+namespace GAIA.BT.Data.Save
 {
     using Enumerations;
     

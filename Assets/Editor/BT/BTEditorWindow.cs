@@ -1,20 +1,21 @@
+using GAIA.BT.Data.Save;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEditor.UIElements;
 
 
-namespace GAIA.AI.Windows
+namespace GAIA.BT.Windows
 {
     public class BTEditorWindow : EditorWindow
     {
         private BTGraphView GraphView;
 
-        public void Initialize(string path)
+        public void Initialize(BTGraphSO graphSO)
         {
             AddGraphView();
             AddStyles();
-            GraphView.LoadSO(path);
+            GraphView.LoadSO(graphSO);
             titleContent.text = GraphView.graphSO.GetName();
         }
 

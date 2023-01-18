@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Xml;
-using GAIA.AI.Enumerations;
 using UnityEngine;
 
 using UnityEditor.Experimental.GraphView;
@@ -12,10 +11,11 @@ using UnityEngine.UIElements;
 using UnityEditor;
 
 
-namespace GAIA.AI.Windows
+namespace GAIA.BT.Windows
 {
     using Elements;
     using Data.Save;
+    using Enumerations;
     
     public class BTGraphView : GraphView
     {
@@ -156,16 +156,15 @@ namespace GAIA.AI.Windows
             Window.titleContent.text = graphSO.GetName();
         }
 
-        [MenuItem("HotKey/Run _F5")]
         private void Save()
         {
             string path = AssetDatabase.GetAssetPath(graphSO);
             SaveAs(path);
         }
         
-        public void LoadSO(string path)
+        public void LoadSO(BTGraphSO graph)
         {
-            graphSO = AssetDatabase.LoadAssetAtPath<BTGraphSO>(path);
+            graphSO = graph;
             Dictionary<string, BTNode> instantiatedNodes = new Dictionary<string, BTNode>();
 
             foreach (BTNodeSO nodeSo in graphSO.Nodes)

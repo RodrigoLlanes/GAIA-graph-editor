@@ -9,7 +9,7 @@ using System;
 using System.Linq;
 
 
-namespace GAIA.AI.Elements
+namespace GAIA.BT.Elements
 {
     using Enumerations;
     
