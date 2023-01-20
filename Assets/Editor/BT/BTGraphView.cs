@@ -130,8 +130,18 @@ namespace GAIA.BT.Windows
             AssetDatabase.CreateAsset(graphSO, path);
             AssetDatabase.SaveAssets();
 
+            bool rootFinded = false;
             foreach (BTNode node in nodes)
             {
+                if (node.IsRoot)
+                {
+                    if (rootFinded)
+                    {
+                        Debug.LogError("Solo el arbol principal debe ser marcado como root.");
+                    }
+
+                    rootFinded = true;
+                }
                 BTNodeSO nodeSo = ScriptableObject.CreateInstance<BTNodeSO>();
                 nodeSo.Initialize(node.Id, node.GetPosition().position, node.NodeName, node.IsRoot, node.NodeType);
                 foreach (BTNode child in node.GetChildren())
@@ -142,6 +152,11 @@ namespace GAIA.BT.Windows
                 graphSO.Nodes.Add(nodeSo);
                 AssetDatabase.AddObjectToAsset(nodeSo, graphSO);
                 AssetDatabase.SaveAssets();
+            }
+
+            if (!rootFinded)
+            {
+                Debug.LogError("Al menos un arbol debe ser marcado como root.");
             }
         }
 
