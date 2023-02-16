@@ -36,7 +36,7 @@ namespace GAIA.BT.Windows
             path = path.Substring(0, path.Length - Path.GetFileName(path).Length);
             path = EditorUtility.SaveFilePanel("Export Behavior Tree as XML", path, graphSO.GetName(), "xml");
             
-            StreamWriter stream = new StreamWriter(path + ".xml");
+            StreamWriter stream = new StreamWriter(path);
             XmlWriterSettings sts = new XmlWriterSettings() { Indent = true };
             XmlWriter writer = XmlWriter.Create(stream, sts);
             
